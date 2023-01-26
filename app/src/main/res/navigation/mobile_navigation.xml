@@ -3,23 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
-
+    app:startDestination="@id/nav_inicio">
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.example.ejerciciodbkotlin.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
-
+        android:id="@+id/nav_inicio"
+        android:name="com.example.ejerciciodbkotlin.Fragments.InicioFragment"
+        android:label="Inicio"
+        tools:layout="@layout/fragment_inicio" />
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.ejerciciodbkotlin.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
-
+        android:id="@+id/nav_eliminar"
+        android:name="com.example.ejerciciodbkotlin.Fragments.EliminarFragment"
+        android:label="Eliminar Alumno"
+        tools:layout="@layout/fragment_eliminar" />
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.ejerciciodbkotlin.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_listar"
+        android:name="com.example.ejerciciodbkotlin.Fragments.ListarFragment"
+        android:label="Listar Alumnos"
+        tools:layout="@layout/fragment_listar" />
+    <fragment
+        android:id="@+id/nav_matricular"
+        android:name="com.example.ejerciciodbkotlin.Fragments.MatricularFragment"
+        android:label="Matricular Alumno"
+        tools:layout="@layout/fragment_matricular" />
+    <fragment
+        android:id="@+id/nav_modificar"
+        android:name="com.example.ejerciciodbkotlin.Fragments.ModificarFragment"
+        android:label="Modificar Alumno"
+        tools:layout="@layout/fragment_modificar" />
 </navigation>

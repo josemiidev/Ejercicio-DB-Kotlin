@@ -7,9 +7,10 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nav_listados">Listados</string>
+    <string name="nav_inicio">Inicio</string>
+    <string name="nav_matricular">Matricular Alumno</string>
+    <string name="nav_modificar">Modificar Alumno</string>
+    <string name="nav_borrar">Borrar Alumno</string>
+    <string name="nav_listar">Listar Alumnos</string>
 </resources>
