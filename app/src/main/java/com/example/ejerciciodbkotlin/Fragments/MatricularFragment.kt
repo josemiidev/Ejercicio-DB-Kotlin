@@ -62,6 +62,9 @@ class MatricularFragment : Fragment() {
                 binding.etDniMatricula.text.clear()
                 binding.etNombreMatricula.text.clear()
                 binding.etApellidosMatricula.text.clear()
+
+                binding.etDniMatricula.requestFocus()
+
             }
         }
     }

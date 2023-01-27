@@ -1,13 +1,16 @@
 package com.example.ejerciciodbkotlin.Fragments
 
+import android.content.ContentValues
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.navigation.Navigation
 import com.example.ejerciciodbkotlin.R
+import com.example.ejerciciodbkotlin.UI.AdminSQLiteOpenHelper
 import com.example.ejerciciodbkotlin.UI.Alumno
 import com.example.ejerciciodbkotlin.databinding.FragmentModificarBinding
 
@@ -52,6 +55,37 @@ class ModificarFragment : Fragment() {
             if (dni != null) {
                 val navController = view?.let { Navigation.findNavController(it) }
                 navController?.navigate(R.id.nav_listar)
+            }
+        }
+
+        binding.btnAceptarModifica.setOnClickListener {
+            var dniM = binding.etDniModifica.text.toString()
+            var nombreM = binding.etNombreModifica.text.toString()
+            var apellidosM = binding.etApellidosModifica.text.toString()
+            var sexoM = binding.spSexoModifica.selectedItem.toString()
+
+            if(!dniM.isNullOrEmpty() && !nombreM.isNullOrEmpty() && !apellidosM.isNullOrEmpty()){
+                var admin = AdminSQLiteOpenHelper(context,"escuela",null,1)
+                var db = admin.writableDatabase
+
+                var datos = ContentValues()
+
+                datos.put("dni",dniM)
+                datos.put("nombre",nombreM)
+                datos.put("apellidos",apellidosM)
+                datos.put("sexo",sexoM)
+
+                var cantidad = db.update("alumnos",datos,"dni='" + dniM + "'",null)
+
+                db.close()
+
+                if(cantidad ==1){
+                    Toast.makeText(context,"Alumno Modificado Correctamente",Toast.LENGTH_LONG).show()
+                }else{
+                    Toast.makeText(context,"Error al modificar",Toast.LENGTH_LONG).show()
+                }
+
+
             }
         }
     }
