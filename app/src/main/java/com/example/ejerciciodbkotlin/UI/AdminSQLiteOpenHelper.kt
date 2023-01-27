@@ -12,7 +12,7 @@ class AdminSQLiteOpenHelper(
 ) :
     SQLiteOpenHelper(context, name, factory, version) {
     override fun onCreate(db: SQLiteDatabase) {
-        db.execSQL("create table alumnos(dni string(9) primary key, nombre string(50), apellidos string(50), sexo char)")
+        db.execSQL("create table alumnos(dni string(9) primary key, nombre string(50), apellidos string(50), sexo string)")
     }
 
     override fun onUpgrade(
