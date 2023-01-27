@@ -1,8 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Fragments.MatricularFragment">
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/tvTituloMatricular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40sp"
+        android:text="@string/titulo_matricular"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etDniMatricula"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20sp"
+        android:hint="@string/matricular_dni" />
+
+    <EditText
+        android:id="@+id/etNombreMatricula"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20sp"
+        android:hint="@string/matricular_nombre" />
+
+    <EditText
+        android:id="@+id/etApellidosMatricula"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20sp"
+        android:hint="@string/matricular_apellidos" />
+
+    <Spinner
+        android:layout_marginTop="20sp"
+        android:layout_gravity="center"
+        android:id="@+id/spSexoMatricula"
+        android:layout_width="300sp"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_marginTop="40sp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btnCancelarMatricula"
+            android:text="@string/cancelar"
+            android:layout_margin="5sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnAceptarMatricula"
+            android:text="@string/aceptar"
+            android:layout_margin="5sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</LinearLayout>

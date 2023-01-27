@@ -7,10 +7,27 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
+    <string name="bienvenida">Bienvenido a la APP de nuestro centro educativo</string>
+
+    <string name="aceptar">Aceptar</string>
+    <string name="cancelar">Cancelar</string>
+
     <string name="nav_listados">Listados</string>
     <string name="nav_inicio">Inicio</string>
     <string name="nav_matricular">Matricular Alumno</string>
     <string name="nav_modificar">Modificar Alumno</string>
     <string name="nav_borrar">Borrar Alumno</string>
     <string name="nav_listar">Listar Alumnos</string>
+    <string name="titulo_matricular">Matricula de un Nuevo Alumno</string>
+    <string name="titulo_modificar">Modificación de un Alumno</string>
+    <string name="titulo_eliminar">Borrado de un Alumno</string>
+
+    <string name="matricular_dni">Introduce el DNI</string>
+    <string name="matricular_nombre">Introduce el Nombre</string>
+    <string name="matricular_apellidos">Introduce los Apellidos</string>
+
+    <string-array name="sexo">
+        <item>Hombre</item>
+        <item>Mujer</item>
+    </string-array>
 </resources>
