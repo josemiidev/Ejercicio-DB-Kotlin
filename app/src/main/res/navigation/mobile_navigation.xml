@@ -28,5 +28,9 @@
         android:id="@+id/nav_modificar"
         android:name="com.example.ejerciciodbkotlin.Fragments.ModificarFragment"
         android:label="Modificar Alumno"
-        tools:layout="@layout/fragment_modificar" />
+        tools:layout="@layout/fragment_modificar" >
+        <argument
+            android:name="Alumno"
+            app:argType="com.example.ejerciciodbkotlin.UI.Alumno" />
+    </fragment>
 </navigation>

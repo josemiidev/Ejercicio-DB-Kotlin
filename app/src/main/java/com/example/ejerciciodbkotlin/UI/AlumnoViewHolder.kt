@@ -14,7 +14,7 @@ class AlumnoViewHolder(view:View) : RecyclerView.ViewHolder(view){
         binding.tvApellidos.text = alumno.apellidos
         binding.tvDni.text = alumno.dni
 
-        if(alumno.sexo.uppercase().equals("HOMBRE")){
+        if(alumno.sexo?.uppercase().equals("HOMBRE")){
             binding.ivAvatar.setImageResource(R.drawable.hombre)
         }else{
             binding.ivAvatar.setImageResource(R.drawable.mujer)

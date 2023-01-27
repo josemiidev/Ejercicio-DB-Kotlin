@@ -31,11 +31,11 @@ class MatricularFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val languages = resources.getStringArray(R.array.sexo)
+        val sexos = resources.getStringArray(R.array.sexo)
 
         val adapter = ArrayAdapter(
             view.context,
-            android.R.layout.simple_spinner_item, languages
+            android.R.layout.simple_spinner_item, sexos
         )
         binding.spSexoMatricula.adapter = adapter
 

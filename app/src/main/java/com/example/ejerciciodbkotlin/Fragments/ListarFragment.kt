@@ -1,11 +1,15 @@
 package com.example.ejerciciodbkotlin.Fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.ejerciciodbkotlin.R
 import com.example.ejerciciodbkotlin.UI.AdminSQLiteOpenHelper
 import com.example.ejerciciodbkotlin.UI.Alumno
 import com.example.ejerciciodbkotlin.UI.AlumnoAdapter
@@ -31,23 +35,30 @@ class ListarFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val admin = AdminSQLiteOpenHelper(view.context, "escuela", null, 1)
         val BaseDeDatos = admin.readableDatabase
-        val cursor = BaseDeDatos.rawQuery("select * from alumnos",null)
+        val cursor = BaseDeDatos.rawQuery("select * from alumnos", null)
         var lista = ArrayList<Alumno>()
 
-        if(cursor.moveToFirst()){
+        if (cursor.moveToFirst()) {
             do {
                 val dni = cursor.getString(0)
                 val nombre = cursor.getString(1)
                 val apellidos = cursor.getString(2)
                 val sexo = cursor.getString(3)
-                lista.add(Alumno(dni,nombre,apellidos,sexo))
-            }while(cursor.moveToNext())
+                lista.add(Alumno(dni, nombre, apellidos, sexo))
+            } while (cursor.moveToNext())
         }
         binding.rvListado.layoutManager = LinearLayoutManager(view.context)
         //pasar datos desde sqlite
-        binding.rvListado.adapter = AlumnoAdapter(lista)
+        binding.rvListado.adapter = AlumnoAdapter(lista, ::ItemClick)
+    }
 
-        binding.rvListado.setOnClickListener {
-        }
+    private fun ItemClick(alumno: Alumno) {
+        val navController = view?.let { Navigation.findNavController(it) }
+        var bundle = Bundle()
+        bundle.putString("dni", alumno.dni)
+        bundle.putString("nombre", alumno.nombre)
+        bundle.putString("apellidos", alumno.apellidos)
+        bundle.putString("sexo", alumno.sexo)
+        navController?.navigate(R.id.nav_modificar, bundle)
     }
 }
