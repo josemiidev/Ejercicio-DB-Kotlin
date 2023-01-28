@@ -11,7 +11,6 @@ import android.widget.Toast
 import androidx.navigation.Navigation
 import com.example.ejerciciodbkotlin.R
 import com.example.ejerciciodbkotlin.UI.AdminSQLiteOpenHelper
-import com.example.ejerciciodbkotlin.UI.Alumno
 import com.example.ejerciciodbkotlin.databinding.FragmentModificarBinding
 
 /**

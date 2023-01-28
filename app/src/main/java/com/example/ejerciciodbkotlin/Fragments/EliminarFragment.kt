@@ -1,13 +1,11 @@
 package com.example.ejerciciodbkotlin.Fragments
 
-import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.example.ejerciciodbkotlin.R
 import com.example.ejerciciodbkotlin.UI.AdminSQLiteOpenHelper
 import com.example.ejerciciodbkotlin.databinding.FragmentEliminarBinding
 
