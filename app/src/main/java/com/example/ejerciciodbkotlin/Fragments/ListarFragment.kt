@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.ejerciciodbkotlin.R
 import com.example.ejerciciodbkotlin.UI.AdminSQLiteOpenHelper
@@ -47,16 +49,6 @@ class ListarFragment : Fragment() {
         }
         binding.rvListado.layoutManager = LinearLayoutManager(view.context)
         //pasar datos desde sqlite
-        binding.rvListado.adapter = AlumnoAdapter(lista, ::ItemClick)
-    }
-
-    private fun ItemClick(alumno: Alumno) {
-        val navController = view?.let { Navigation.findNavController(it) }
-        var bundle = Bundle()
-        bundle.putString("dni", alumno.dni)
-        bundle.putString("nombre", alumno.nombre)
-        bundle.putString("apellidos", alumno.apellidos)
-        bundle.putString("sexo", alumno.sexo)
-        navController?.navigate(R.id.nav_modificar, bundle)
+        binding.rvListado.adapter = AlumnoAdapter(lista)
     }
 }

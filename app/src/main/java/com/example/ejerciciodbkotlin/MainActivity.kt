@@ -1,7 +1,10 @@
 package com.example.ejerciciodbkotlin
 
+import android.content.Context
 import android.os.Bundle
+import android.util.AttributeSet
 import android.view.Menu
+import android.view.View
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -10,6 +13,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
 import com.example.ejerciciodbkotlin.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -37,8 +41,20 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+        navView.setNavigationItemSelectedListener {
+            //PARA NAVEGAR ENTRE LOS FRAGMENTS
+            when(it.itemId){
+                R.id.nav_matricular -> navController.navigate(R.id.nav_matricular)
+                R.id.nav_eliminar -> navController.navigate(R.id.nav_eliminar)
+                R.id.nav_modificar -> navController.navigate(R.id.nav_modificar)
+                R.id.nav_inicio -> navController.navigate(R.id.nav_inicio)
+                R.id.nav_listar -> navController.navigate(R.id.nav_listar)
+            }
+            //PARA CERRAR EL PANEL LATERAL
+            binding.drawerLayout.closeDrawer(GravityCompat.START)
+            true
+        }
     }
-
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.main, menu)
@@ -49,4 +65,5 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
+
 }
